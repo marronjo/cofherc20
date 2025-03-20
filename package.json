@@ -1,0 +1,26 @@
+{
+  "name": "cofherc20",
+  "version": "1.0.0",
+  "description": "**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "forge test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marronjo/cofherc20.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marronjo/cofherc20/issues"
+  },
+  "homepage": "https://github.com/marronjo/cofherc20#readme",
+  "dependencies": {
+    "@fhenixprotocol/cofhe-contracts": "^0.0.13"
+  }
+}
