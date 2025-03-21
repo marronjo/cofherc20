@@ -18,6 +18,8 @@ contract FHERC20Test is Test {
         CFT = new CoFheTest(false);
         token = new FHERC20("TOKEN", "TOK");
 
+        vm.label(bob, "bob");
+
         InEuint32 memory amount = CFT.createInEuint32(startingBalance, bob);
         vm.prank(bob);
         token.mintEncrypted(amount);
