@@ -79,9 +79,7 @@ contract CounterTest is Test {
         uint8 count = 0;
         bool success = false;
         while (!success && count < 100) {
-            (uint256 result, bool decrypted) = counter.getDecryptResultSafe(
-                counter.eNumber()
-            );
+            (uint256 result, bool decrypted) = counter.getDecryptResultSafe(counter.eNumber());
             if (decrypted) {
                 assertEq(result, 5);
                 success = true;

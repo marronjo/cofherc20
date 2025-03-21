@@ -23,11 +23,7 @@ contract Counter {
 
     function sub(InEuint32 memory inNumber) public {
         euint32 inAsEuint32 = FHE.asEuint32(inNumber);
-        euint32 eSubOrZero = FHE.select(
-            FHE.lte(inAsEuint32, eNumber),
-            inAsEuint32,
-            FHE.asEuint32(0)
-        );
+        euint32 eSubOrZero = FHE.select(FHE.lte(inAsEuint32, eNumber), inAsEuint32, FHE.asEuint32(0));
         eNumber = FHE.sub(eNumber, eSubOrZero);
         FHE.allowThis(eNumber);
     }
@@ -45,9 +41,7 @@ contract Counter {
         return FHE.getDecryptResult(input1);
     }
 
-    function getDecryptResultSafe(
-        euint32 input1
-    ) public view returns (uint32 value, bool decrypted) {
+    function getDecryptResultSafe(euint32 input1) public view returns (uint32 value, bool decrypted) {
         return FHE.getDecryptResultSafe(input1);
     }
 }

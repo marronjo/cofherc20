@@ -16,7 +16,7 @@ contract FHERC20Test is Test {
 
     function setUp() public {
         CFT = new CoFheTest(false);
-        token = new FHERC20("TOKEN", "TOK");   
+        token = new FHERC20("TOKEN", "TOK");
 
         InEuint32 memory amount = CFT.createInEuint32(startingBalance, bob);
         vm.prank(bob);
@@ -54,9 +54,7 @@ contract FHERC20Test is Test {
         uint8 count = 0;
         bool success = false;
         while (!success && count < 100) {
-            (uint256 result, bool decrypted) = token.getDecryptBalanceResultSafe(
-                token.encryptedBalances(address(bob))
-            );
+            (uint256 result, bool decrypted) = token.getDecryptBalanceResultSafe(token.encryptedBalances(address(bob)));
             if (decrypted) {
                 assertEq(result, startingBalance);
                 success = true;
