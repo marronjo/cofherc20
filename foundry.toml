@@ -5,6 +5,7 @@ libs = ["lib"]
 
 remappings= [
     "@fhenixprotocol/cofhe-foundry-mocks/=lib/cofhe-foundry-mocks/src/",
-    "@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/"
+    "@fhenixprotocol/cofhe-contracts/=lib/cofhe-contracts/contracts/",
+    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/"
     ]
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
